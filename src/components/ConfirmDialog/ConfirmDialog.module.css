@@ -1,0 +1,104 @@
+/* ConfirmDialog.module.css */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: backdropIn var(--duration-base) var(--ease-smooth);
+}
+
+.dialog {
+  background: var(--bg-dialog);
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: var(--shadow-dialog);
+  animation: dialogIn var(--duration-slow) var(--ease-spring);
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--priority-high);
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.body {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.taskName {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.cancelBtn,
+.confirmBtn {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition:
+    opacity var(--duration-base) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.cancelBtn {
+  background: var(--bg-button);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-soft);
+}
+
+.confirmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: var(--priority-high);
+  color: white;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.40);
+}
+
+.cancelBtn:hover  { opacity: 0.80; transform: scale(1.03); }
+.confirmBtn:hover { opacity: 0.88; transform: scale(1.03); }
+
+.cancelBtn:active,
+.confirmBtn:active { transform: scale(0.97); }

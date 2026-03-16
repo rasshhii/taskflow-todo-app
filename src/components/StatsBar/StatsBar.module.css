@@ -1,0 +1,112 @@
+/* StatsBar.module.css */
+.statsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 4px;
+  animation: fadeInUp var(--duration-slow) var(--ease-smooth) 50ms both;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statItem {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--indigo);
+  line-height: 1;
+}
+
+.statCompleted {
+  color: var(--priority-low);
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-soft);
+  border-radius: 99px;
+}
+
+/* ── Right Side ── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Progress Bar ── */
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressBar {
+  width: 90px;
+  height: 5px;
+  background: var(--border-soft);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--indigo) 0%, var(--teal) 100%);
+  border-radius: 99px;
+  transition: width 600ms var(--ease-smooth);
+}
+
+.progressLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 28px;
+}
+
+/* ── Clear Button ── */
+.clearBtn {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border-soft);
+  border-radius: 99px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition:
+    color var(--duration-base) var(--ease-smooth),
+    border-color var(--duration-base) var(--ease-smooth),
+    background var(--duration-base) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.clearBtn:hover {
+  color: var(--priority-high);
+  border-color: var(--priority-high);
+  background: rgba(239, 68, 68, 0.07);
+  transform: scale(1.04);
+}
+
+@media (max-width: 400px) {
+  .progressWrap { display: none; }
+}

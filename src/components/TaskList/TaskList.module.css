@@ -1,0 +1,8 @@
+/* TaskList.module.css */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeInUp var(--duration-slow) var(--ease-smooth) 150ms both;
+}

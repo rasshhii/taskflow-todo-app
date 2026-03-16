@@ -1,0 +1,206 @@
+/* AddTaskForm.module.css */
+.card {
+  background: var(--bg-card);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  animation: fadeInUp var(--duration-slow) var(--ease-smooth);
+  transition: box-shadow var(--duration-base) var(--ease-smooth);
+}
+
+.card:focus-within {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-focus);
+}
+
+.cardLabel {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.formInner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Input Row ── */
+.inputRow {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.inputWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  transition:
+    border-color var(--duration-base) var(--ease-smooth),
+    box-shadow var(--duration-base) var(--ease-smooth);
+  overflow: hidden;
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.inputWrapper.inputError {
+  border-color: var(--priority-high);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.inputIcon {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  padding: 13px 12px 13px 0;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.charCount {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  padding-right: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Add Button ── */
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--indigo) 0%, var(--teal) 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  white-space: nowrap;
+  transition:
+    opacity var(--duration-base) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-spring),
+    box-shadow var(--duration-base) var(--ease-smooth);
+  min-width: 84px;
+  justify-content: center;
+}
+
+.addBtn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.40);
+}
+
+.addBtn:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+.addBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.addBtnLoading {
+  pointer-events: none;
+}
+
+.btnSpinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Priority Selector ── */
+.priorityRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priorityLabel {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-right: 2px;
+}
+
+.priorityBtn {
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1.5px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-tag);
+  color: var(--text-secondary);
+  transition:
+    background var(--duration-base) var(--ease-smooth),
+    color var(--duration-base) var(--ease-smooth),
+    border-color var(--duration-base) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.priorityBtn:hover {
+  transform: scale(1.05);
+}
+
+.priorityLow.prioritySelected  { background: rgba(16,185,129,0.15); border-color: var(--priority-low);    color: var(--priority-low); }
+.priorityMedium.prioritySelected { background: rgba(245,158,11,0.15); border-color: var(--priority-medium); color: var(--priority-medium); }
+.priorityHigh.prioritySelected  { background: rgba(239,68,68,0.15);  border-color: var(--priority-high);   color: var(--priority-high); }
+
+/* ── Error ── */
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--priority-high);
+  animation: slideIn var(--duration-base) var(--ease-smooth);
+}
+
+@media (max-width: 480px) {
+  .card { padding: 18px 16px; }
+  .addBtn span { display: none; }
+  .addBtn { padding: 0 15px; min-width: 46px; }
+}

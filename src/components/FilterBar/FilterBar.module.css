@@ -1,0 +1,58 @@
+/* FilterBar.module.css */
+.filterBar {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background: var(--bg-card);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  animation: fadeInUp var(--duration-slow) var(--ease-smooth) 100ms both;
+}
+
+.filterBtn {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--duration-base) var(--ease-smooth),
+    color var(--duration-base) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.filterBtn:hover:not(.active) {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transform: scale(1.02);
+}
+
+.filterBtn.active {
+  background: linear-gradient(135deg, var(--indigo) 0%, var(--teal-light) 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.activeIndicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.75);
+}
+
+@media (max-width: 360px) {
+  .filterBtn { font-size: 0.78rem; padding: 8px 10px; }
+}

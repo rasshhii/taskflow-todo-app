@@ -1,0 +1,166 @@
+/* ===== Global Reset & CSS Variables ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Brand */
+  --indigo: #6366f1;
+  --indigo-light: #818cf8;
+  --indigo-dark: #4f46e5;
+  --teal: #0ea5e9;
+  --teal-light: #38bdf8;
+
+  /* Priority */
+  --priority-low: #10b981;
+  --priority-medium: #f59e0b;
+  --priority-high: #ef4444;
+
+  /* Animation */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ===== Light Theme ===== */
+[data-theme="light"] {
+  --bg-page: #f0f2ff;
+  --bg-mesh-1: rgba(99, 102, 241, 0.12);
+  --bg-mesh-2: rgba(14, 165, 233, 0.10);
+  --bg-card: rgba(255, 255, 255, 0.72);
+  --bg-card-hover: rgba(255, 255, 255, 0.90);
+  --bg-input: rgba(255, 255, 255, 0.85);
+  --bg-button: rgba(255, 255, 255, 0.65);
+  --bg-tag: rgba(99, 102, 241, 0.10);
+  --bg-dialog: rgba(255, 255, 255, 0.95);
+
+  --border-soft: rgba(99, 102, 241, 0.15);
+  --border-focus: rgba(99, 102, 241, 0.55);
+  --border-card: rgba(255, 255, 255, 0.80);
+
+  --text-primary: #1e1b4b;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --text-on-accent: #ffffff;
+
+  --shadow-card: 0 8px 32px rgba(99, 102, 241, 0.10), 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-hover: 0 16px 48px rgba(99, 102, 241, 0.18), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-button: 0 4px 14px rgba(99, 102, 241, 0.30);
+  --shadow-dialog: 0 25px 80px rgba(0, 0, 0, 0.15);
+
+  --glass-blur: blur(16px) saturate(180%);
+}
+
+/* ===== Dark Theme ===== */
+[data-theme="dark"] {
+  --bg-page: #0d0f1a;
+  --bg-mesh-1: rgba(99, 102, 241, 0.18);
+  --bg-mesh-2: rgba(14, 165, 233, 0.14);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.09);
+  --bg-input: rgba(255, 255, 255, 0.07);
+  --bg-button: rgba(255, 255, 255, 0.08);
+  --bg-tag: rgba(99, 102, 241, 0.20);
+  --bg-dialog: rgba(18, 20, 35, 0.97);
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(99, 102, 241, 0.60);
+  --border-card: rgba(255, 255, 255, 0.07);
+
+  --text-primary: #f1f0ff;
+  --text-secondary: #a5a8c8;
+  --text-muted: #6b6f8a;
+  --text-on-accent: #ffffff;
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.30), 0 1px 3px rgba(0,0,0,0.20);
+  --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.40), 0 4px 12px rgba(99,102,241,0.15);
+  --shadow-button: 0 4px 14px rgba(99, 102, 241, 0.40);
+  --shadow-dialog: 0 25px 80px rgba(0, 0, 0, 0.60);
+
+  --glass-blur: blur(20px) saturate(160%);
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color var(--duration-slow) var(--ease-smooth),
+              color var(--duration-slow) var(--ease-smooth);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--indigo-light); }
+
+/* ===== Keyframes ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes dialogIn {
+  from { opacity: 0; transform: scale(0.90) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Focus Visible ===== */
+:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

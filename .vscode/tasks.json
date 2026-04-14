@@ -2,13 +2,27 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "🚀 npm run dev - START APP",
+			"type": "shell",
+			"command": "npm",
+			"args": ["run", "dev"],
+			"isBackground": false,
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"focus": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "build-todo-app",
 			"type": "shell",
 			"command": "npm",
-			"args": [
-				"run",
-				"build"
-			],
+			"args": ["run", "build"],
 			"isBackground": false
 		}
 	]

@@ -2,7 +2,7 @@ import TaskItem from '../TaskItem/TaskItem'
 import styles from './TaskList.module.css'
 
 // Props: tasks array + action callbacks passed down
-export default function TaskList({ tasks, onToggle, onEdit, onDeleteRequest }) {
+export default function TaskList({ tasks, onToggle, onEdit, onDeleteRequest, onViewDetails }) {
   return (
     <ul className={styles.list} role="list" aria-label="Task list">
       {/* List rendering with .map() and unique keys */}
@@ -14,6 +14,7 @@ export default function TaskList({ tasks, onToggle, onEdit, onDeleteRequest }) {
           onToggle={onToggle}
           onEdit={onEdit}
           onDeleteRequest={onDeleteRequest}
+          onViewDetails={onViewDetails}
         />
       ))}
     </ul>

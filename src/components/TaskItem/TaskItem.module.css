@@ -245,6 +245,13 @@
   transform: scale(1.1);
 }
 
+.detailsBtn:hover:not(:disabled) {
+  background: rgba(33, 150, 243, 0.12);
+  color: #2196f3;
+  border-color: #2196f3;
+  transform: scale(1.1);
+}
+
 .deleteBtn:hover:not(:disabled) {
   background: rgba(239, 68, 68, 0.12);
   color: var(--priority-high);

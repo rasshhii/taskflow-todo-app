@@ -8,7 +8,7 @@ const PRIORITY_META = {
 }
 
 // Props: task object + callbacks
-export default function TaskItem({ task, index, onToggle, onEdit, onDeleteRequest }) {
+export default function TaskItem({ task, index, onToggle, onEdit, onDeleteRequest, onViewDetails }) {
   // ── Conditional state: edit mode vs view mode ──
   const [isEditing, setIsEditing] = useState(false)
   const [editValue, setEditValue] = useState(task.title)
@@ -129,6 +129,17 @@ export default function TaskItem({ task, index, onToggle, onEdit, onDeleteReques
       {/* ── Action Buttons (view mode only) ── */}
       {!isEditing && (
         <div className={styles.actions}>
+          <button
+            className={`${styles.actionBtn} ${styles.detailsBtn}`}
+            onClick={() => onViewDetails?.(task.id)}
+            aria-label={`View details: ${task.title}`}
+            title="View details"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </button>
           <button
             className={`${styles.actionBtn} ${styles.editBtn}`}
             onClick={handleEditStart}

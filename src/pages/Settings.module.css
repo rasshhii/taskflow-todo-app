@@ -1,0 +1,235 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+  animation: slideDown 0.3s ease;
+}
+
+.message.success {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settingCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+  margin-bottom: 2rem;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text);
+}
+
+.cardDescription {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.themeOptions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.themeOption {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.themeOption:hover {
+  border-color: var(--color-accent);
+}
+
+.themeOption.selected {
+  border-color: var(--color-accent);
+  background: rgba(var(--color-accent-rgb), 0.05);
+}
+
+.radioInput {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.themeLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.themeIcon {
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  min-width: 180px;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.exportBtn {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.exportBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.importBtn {
+  background: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.importBtn:hover {
+  background: #2196f3;
+  color: white;
+}
+
+.dangerBtn {
+  width: 100%;
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border: 1px solid #f44336;
+}
+
+.dangerBtn:hover {
+  background: #f44336;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.infoCard {
+  background: rgba(var(--color-accent-rgb), 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+}
+
+.infoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infoList li {
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.infoList strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .settingCard {
+    padding: 1.5rem;
+  }
+
+  .themeOptions {
+    flex-direction: column;
+  }
+
+  .themeOption {
+    min-width: unset;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,269 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.refreshBtn {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refreshBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text);
+}
+
+.priorityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.priorityCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.priorityCard:hover {
+  transform: translateY(-4px);
+}
+
+.priorityCard.high:hover {
+  background: rgba(244, 67, 54, 0.05);
+  border-color: #f44336;
+}
+
+.priorityCard.medium:hover {
+  background: rgba(255, 193, 7, 0.05);
+  border-color: #ffc107;
+}
+
+.priorityCard.low:hover {
+  background: rgba(76, 175, 80, 0.05);
+  border-color: #4caf50;
+}
+
+.priorityIcon {
+  font-size: 2rem;
+}
+
+.priorityCount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.priorityLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.metricsCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.metricItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.metricIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.progressBar {
+  width: 200px;
+  height: 8px;
+  background: var(--color-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.75rem 0;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent));
+  transition: width 0.3s ease;
+}
+
+.insightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.insight {
+  background: var(--color-bg-secondary);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  color: var(--color-text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .priorityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricItem {
+    flex-direction: column;
+  }
+
+  .progressBar {
+    width: 100%;
+  }
+}
